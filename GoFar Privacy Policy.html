@@ -1,0 +1,544 @@
+
+<title>GoFar Privacy Policy</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Spectral:wght@500;600&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap');
+
+  :root {
+    --bg: #EBEFF1;
+    --surface: #F7F9FA;
+    --surface-raised: #FFFFFF;
+    --ink: #1A222C;
+    --ink-soft: #4C5763;
+    --ink-faint: #7C8792;
+    --primary: #2C5F8A;
+    --primary-soft: #DCE7EE;
+    --accent: #B9822B;
+    --accent-soft: #F3E7D2;
+    --border: #D5DCE1;
+    --border-strong: #B9C3CA;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #10151C;
+      --surface: #161C24;
+      --surface-raised: #1C232D;
+      --ink: #E8ECEF;
+      --ink-soft: #A7B1BC;
+      --ink-faint: #7A8390;
+      --primary: #7BAAD6;
+      --primary-soft: #24333F;
+      --accent: #E3B15B;
+      --accent-soft: #33291A;
+      --border: #2A333F;
+      --border-strong: #3A4553;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #10151C;
+    --surface: #161C24;
+    --surface-raised: #1C232D;
+    --ink: #E8ECEF;
+    --ink-soft: #A7B1BC;
+    --ink-faint: #7A8390;
+    --primary: #7BAAD6;
+    --primary-soft: #24333F;
+    --accent: #E3B15B;
+    --accent-soft: #33291A;
+    --border: #2A333F;
+    --border-strong: #3A4553;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Spectral', Georgia, 'Times New Roman', serif;
+    color: var(--ink);
+    text-wrap: balance;
+    font-weight: 600;
+  }
+
+  .mono {
+    font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  }
+
+  a { color: var(--primary); }
+
+  .layout {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 24px 96px;
+    display: grid;
+    grid-template-columns: 240px minmax(0, 700px);
+    gap: 64px;
+    justify-content: center;
+  }
+
+  @media (max-width: 880px) {
+    .layout { grid-template-columns: minmax(0, 1fr); gap: 0; padding: 0 20px 72px; }
+    .toc-rail { display: none; }
+  }
+
+  /* Masthead */
+  .masthead {
+    position: relative;
+    overflow: hidden;
+    background: var(--surface-raised);
+    border-bottom: 1px solid var(--border);
+    padding: 56px 24px 48px;
+    margin-bottom: 8px;
+  }
+
+  .masthead-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    padding-left: 304px;
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (max-width: 880px) {
+    .masthead-inner { padding-left: 0; }
+  }
+
+  .contour {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin: 0 0 14px;
+  }
+
+  .masthead h1 {
+    font-size: 40px;
+    line-height: 1.12;
+    margin: 0 0 12px;
+  }
+
+  .masthead .lede {
+    color: var(--ink-soft);
+    font-size: 17px;
+    max-width: 54ch;
+    margin: 0 0 22px;
+  }
+
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12.5px;
+    color: var(--ink-faint);
+  }
+
+  .meta-row strong {
+    color: var(--ink-soft);
+    font-weight: 500;
+  }
+
+  /* TOC rail */
+  .toc-rail {
+    padding-top: 56px;
+    position: sticky;
+    top: 32px;
+    align-self: start;
+    height: max-content;
+  }
+
+  .toc-rail .toc-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0 0 14px;
+  }
+
+  .toc-rail ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    border-left: 1px solid var(--border);
+  }
+
+  .toc-rail a {
+    display: flex;
+    gap: 10px;
+    padding: 7px 0 7px 16px;
+    text-decoration: none;
+    color: var(--ink-soft);
+    font-size: 13.5px;
+    border-left: 2px solid transparent;
+    margin-left: -1px;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+
+  .toc-rail a:hover {
+    color: var(--primary);
+    border-left-color: var(--primary);
+  }
+
+  .toc-rail a .n {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--ink-faint);
+    font-size: 12px;
+    min-width: 16px;
+  }
+
+  /* Content */
+  .content { padding-top: 40px; min-width: 0; }
+
+  section {
+    scroll-margin-top: 24px;
+    padding: 34px 0;
+    border-top: 1px solid var(--border);
+  }
+
+  section:first-of-type { border-top: none; padding-top: 0; }
+
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin: 0 0 16px;
+  }
+
+  .section-head .n {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  section h2 { font-size: 23px; margin: 0; }
+
+  section h3 {
+    font-size: 16px;
+    font-family: 'Public Sans', sans-serif;
+    font-weight: 600;
+    margin: 20px 0 8px;
+  }
+
+  section p { margin: 0 0 14px; color: var(--ink-soft); max-width: 66ch; }
+  section p:last-child { margin-bottom: 0; }
+  section ul { margin: 0 0 14px; padding-left: 20px; color: var(--ink-soft); max-width: 62ch; }
+  section li { margin-bottom: 8px; }
+  section li:last-child { margin-bottom: 0; }
+  section strong { color: var(--ink); font-weight: 600; }
+
+  .callout {
+    background: var(--accent-soft);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
+    padding: 16px 18px;
+    margin: 16px 0;
+  }
+  .callout p { color: var(--ink); margin: 0; max-width: none; }
+  .callout p + p { margin-top: 8px; }
+
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 12px;
+    margin: 4px 0 14px;
+  }
+
+  .service-card {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 14px 16px;
+  }
+
+  .service-card .name {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  .service-card .purpose {
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+
+  .rights-grid {
+    display: grid;
+    gap: 10px;
+    margin: 4px 0 14px;
+  }
+
+  .right-row {
+    display: flex;
+    gap: 12px;
+    padding: 12px 14px;
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    align-items: flex-start;
+  }
+
+  .right-row .dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--primary);
+    margin-top: 7px;
+    flex: none;
+  }
+
+  .right-row div { color: var(--ink-soft); font-size: 14.5px; }
+  .right-row strong { color: var(--ink); }
+
+  .danger-box {
+    border: 1px solid #B4483F44;
+    background: color-mix(in srgb, #B4483F 8%, var(--surface-raised));
+    border-radius: 6px;
+    padding: 18px 20px;
+    margin-top: 6px;
+  }
+
+  :root:not([data-theme="light"]) .danger-box,
+  :root[data-theme="dark"] .danger-box {
+    background: color-mix(in srgb, #B4483F 16%, var(--surface-raised));
+  }
+
+  .danger-box h3 { margin-top: 0; color: #C24B41; }
+
+  .contact-block {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 22px 24px;
+  }
+
+  .contact-block dl {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 8px 16px;
+    margin: 0;
+  }
+
+  .contact-block dt {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-faint);
+    padding-top: 2px;
+  }
+
+  .contact-block dd {
+    margin: 0;
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .placeholder {
+    background: var(--accent-soft);
+    color: var(--accent);
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.92em;
+    font-weight: 500;
+  }
+
+  footer {
+    max-width: 700px;
+    margin: 40px auto 0;
+    padding: 0 24px;
+    color: var(--ink-faint);
+    font-size: 12.5px;
+    text-align: center;
+  }
+
+  @media (max-width: 880px) {
+    footer { padding: 0 20px; }
+  }
+</style>
+
+<div class="masthead">
+  <svg class="contour" viewBox="0 0 1120 260" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M-20,210 C 120,170 180,230 300,190 S 480,140 600,180 S 780,220 900,170 S 1060,140 1140,190" fill="none" stroke="var(--border-strong)" stroke-width="1.4"/>
+    <path d="M-20,230 C 130,195 190,245 310,215 S 490,175 610,205 S 790,235 910,195 S 1070,170 1140,210" fill="none" stroke="var(--border-strong)" stroke-width="1.4"/>
+    <path d="M-20,250 C 140,222 200,258 320,238 S 500,208 620,230 S 800,250 920,220 S 1080,200 1140,232" fill="none" stroke="var(--border-strong)" stroke-width="1.4"/>
+    <path d="M-20,190 C 110,150 170,205 290,165 S 470,110 590,150 S 770,190 890,145 S 1050,110 1140,155" fill="none" stroke="var(--border)" stroke-width="1.2"/>
+  </svg>
+  <div class="masthead-inner">
+    <p class="eyebrow">Privacy Policy</p>
+    <h1>GoFar</h1>
+    <p class="lede">Your guide to Sudurpashchim Province. This page explains, in plain language, what information GoFar collects, why, and the choices you have.</p>
+    <div class="meta-row">
+      <span><strong>Effective</strong> Aug 30, 2026</span>
+      <span><strong>App version</strong> 1.0.0</span>
+      <span><strong>Package</strong> com.gofar.app</span>
+    </div>
+  </div>
+</div>
+
+<div class="layout">
+  <nav class="toc-rail" aria-label="Table of contents">
+    <p class="toc-label">On this page</p>
+    <ol>
+      <li><a href="#overview"><span class="n">01</span>Overview</a></li>
+      <li><a href="#collect"><span class="n">02</span>Information we collect</a></li>
+      <li><a href="#use"><span class="n">03</span>How we use it</a></li>
+      <li><a href="#photos"><span class="n">04</span>Photos you share</a></li>
+      <li><a href="#services"><span class="n">05</span>Third-party services</a></li>
+      <li><a href="#storage"><span class="n">06</span>Storage &amp; security</a></li>
+      <li><a href="#retention"><span class="n">07</span>Data retention</a></li>
+      <li><a href="#rights"><span class="n">08</span>Your rights</a></li>
+      <li><a href="#deletion"><span class="n">09</span>Account deletion</a></li>
+      <li><a href="#children"><span class="n">10</span>Children's privacy</a></li>
+      <li><a href="#international"><span class="n">11</span>International users</a></li>
+      <li><a href="#changes"><span class="n">12</span>Changes to this policy</a></li>
+      <li><a href="#contact"><span class="n">13</span>Contact us</a></li>
+    </ol>
+  </nav>
+
+  <main class="content">
+
+    <section id="overview">
+      <div class="section-head"><span class="n">01</span><h2>Overview</h2></div>
+      <p>GoFar is a travel companion app for Nepal's Sudurpashchim (Far-Western) Province — helping you discover destinations, plan trips, and navigate the region. This policy covers the GoFar Android app (package <code class="mono">com.gofar.app</code>) and describes what data we collect, how we use it, who we share it with, and the controls you have.</p>
+      <p>We built GoFar to work well with as little personal data as possible: you can browse every destination as a guest before ever creating an account.</p>
+    </section>
+
+    <section id="collect">
+      <div class="section-head"><span class="n">02</span><h2>Information we collect</h2></div>
+      <h3>Account information</h3>
+      <p>If you create an account, we collect your name, email address, and profile photo — supplied either directly (email sign-up) or from your Google account (Google Sign-In). You can also continue as a guest without providing any of this.</p>
+      <h3>Trip &amp; activity data</h3>
+      <p>Trips, stops, and destinations you save or favorite are stored against your account so they sync across sign-ins.</p>
+      <h3>Location data</h3>
+      <p>Only if you grant location permission: your device's approximate or precise location is used to center the map and surface nearby destinations. GoFar does not collect location in the background, and you can revoke this permission at any time.</p>
+      <h3>Photos you upload</h3>
+      <p>If you add a photo to a destination page, we store the image file and its metadata. See <a href="#photos">Photos you share</a> below — this content is public.</p>
+      <h3>Usage &amp; diagnostic data</h3>
+      <p>We collect basic app-usage analytics and crash reports (via Firebase Analytics and Crashlytics) to find and fix problems and understand which features are useful.</p>
+      <h3>Push notification token</h3>
+      <p>If notifications are enabled, your device is assigned a messaging token (via Firebase Cloud Messaging) used to deliver notifications to that device.</p>
+    </section>
+
+    <section id="use">
+      <div class="section-head"><span class="n">03</span><h2>How we use it</h2></div>
+      <div class="rights-grid">
+        <div class="right-row"><span class="dot"></span><div>To run core features — <strong>your account, saved places, trips, and preferences.</strong></div></div>
+        <div class="right-row"><span class="dot"></span><div>To center the map and personalize <strong>nearby-destination recommendations.</strong></div></div>
+        <div class="right-row"><span class="dot"></span><div>To send notifications you've opted into, and diagnose crashes to <strong>improve reliability.</strong></div></div>
+        <div class="right-row"><span class="dot"></span><div><strong>We do not sell your personal data</strong>, and we do not use it for third-party advertising.</div></div>
+      </div>
+    </section>
+
+    <section id="photos">
+      <div class="section-head"><span class="n">04</span><h2>Photos you share</h2></div>
+      <p>GoFar lets signed-in users add photos to a destination page so other travelers can see it. Before you upload:</p>
+      <div class="callout">
+        <p><strong>Photos you add are public.</strong> Any photo you upload to a destination is visible to every GoFar user who views that destination, alongside the display name on your account.</p>
+        <p>Only upload photos you're comfortable sharing publicly, and that you have the right to share. Don't include other identifiable people without their consent, and don't upload anything sensitive.</p>
+      </div>
+      <p>Uploaded photos are stored in our cloud storage and linked to the destination and to your account. There is currently no in-app option to remove a photo you've uploaded — contact us (see <a href="#contact">Contact us</a>) and we'll remove it for you.</p>
+    </section>
+
+    <section id="services">
+      <div class="section-head"><span class="n">05</span><h2>Third-party services</h2></div>
+      <p>GoFar is built on the following services, each operated by Google. We share the minimum data each needs to do its job — we do not sell or otherwise share your data with anyone else.</p>
+      <div class="service-grid">
+        <div class="service-card"><div class="name">Firebase Authentication</div><div class="purpose">Handles sign-in; GoFar never sees or stores your password.</div></div>
+        <div class="service-card"><div class="name">Cloud Firestore</div><div class="purpose">Stores your profile, trips, and saved places.</div></div>
+        <div class="service-card"><div class="name">Firebase Storage</div><div class="purpose">Stores destination photos you upload.</div></div>
+        <div class="service-card"><div class="name">Firebase Cloud Messaging</div><div class="purpose">Delivers push notifications you've enabled.</div></div>
+        <div class="service-card"><div class="name">Firebase Analytics</div><div class="purpose">Aggregate, anonymized usage statistics.</div></div>
+        <div class="service-card"><div class="name">Firebase Crashlytics</div><div class="purpose">Crash and error reporting.</div></div>
+        <div class="service-card"><div class="name">Google Maps Platform</div><div class="purpose">Powers the interactive map and location search.</div></div>
+        <div class="service-card"><div class="name">Google Sign-In</div><div class="purpose">Optional one-tap sign-in with your Google account.</div></div>
+      </div>
+    </section>
+
+    <section id="storage">
+      <div class="section-head"><span class="n">06</span><h2>Storage &amp; security</h2></div>
+      <p>Your account and trip data are stored on Google Cloud infrastructure via Firebase, encrypted in transit (HTTPS/TLS) and at rest under Google's standard security practices.</p>
+      <p>A copy of destination data is also cached locally on your device, so you can keep browsing saved places and destination details without a connection. This local cache is not encrypted separately from your device's own storage protections.</p>
+    </section>
+
+    <section id="retention">
+      <div class="section-head"><span class="n">07</span><h2>Data retention</h2></div>
+      <p>We keep your account data for as long as your account is active. If you delete your account (see below), your profile, trips, and saved places are permanently deleted from our systems. Photos you've uploaded to destinations may remain (see <a href="#photos">Photos you share</a>) since they're shared content tied to the destination rather than solely to your account; contact us to have a specific photo removed.</p>
+      <p>Aggregated, de-identified analytics and crash data are retained by Firebase per Google's own retention schedules and are not directly tied back to you once de-identified.</p>
+    </section>
+
+    <section id="rights">
+      <div class="section-head"><span class="n">08</span><h2>Your rights &amp; choices</h2></div>
+      <div class="rights-grid">
+        <div class="right-row"><span class="dot"></span><div>Review and update your <strong>name and language preference</strong> from the Profile screen.</div></div>
+        <div class="right-row"><span class="dot"></span><div>Revoke <strong>location permission</strong> at any time from your device's app settings.</div></div>
+        <div class="right-row"><span class="dot"></span><div>Turn <strong>notifications</strong> on or off from Profile → Preferences.</div></div>
+        <div class="right-row"><span class="dot"></span><div>Request a copy or removal of your data, or ask us anything, via <a href="#contact">Contact us</a>.</div></div>
+        <div class="right-row"><span class="dot"></span><div><strong>Permanently delete</strong> your account and its data at any time — see below.</div></div>
+      </div>
+    </section>
+
+    <section id="deletion">
+      <div class="section-head"><span class="n">09</span><h2>Account deletion</h2></div>
+      <p>You can permanently delete your GoFar account, in-app, at any time from <strong>Profile → Privacy &amp; Security → Delete My Account</strong>. This immediately and permanently removes your account, profile, saved places, and trips. This action cannot be undone.</p>
+      <p>You don't need an active account to request deletion — if you'd rather not use the in-app flow, contact us (see <a href="#contact">Contact us</a>) with the email address on your account and we'll process the deletion manually.</p>
+    </section>
+
+    <section id="children">
+      <div class="section-head"><span class="n">10</span><h2>Children's privacy</h2></div>
+      <p>GoFar is a general-audience travel app intended for tourists and travelers, and is not directed at children under 13. We do not knowingly collect personal information from children under 13. If you believe a child has provided us with personal data, contact us and we will delete it.</p>
+    </section>
+
+    <section id="international">
+      <div class="section-head"><span class="n">11</span><h2>International users</h2></div>
+      <p>GoFar is built for travelers visiting Nepal's Sudurpashchim Province, and our backend infrastructure (Firebase / Google Cloud) may process and store data outside of your home country, including in Nepal and other countries where Google operates data centers. By using GoFar, you consent to this transfer and processing.</p>
+    </section>
+
+    <section id="changes">
+      <div class="section-head"><span class="n">12</span><h2>Changes to this policy</h2></div>
+      <p>We may update this policy as GoFar's features change. We'll update the "Effective" date at the top of this page when we do. Material changes will also be reflected in the in-app Privacy &amp; Security section. Continued use of GoFar after a change means you accept the updated policy.</p>
+    </section>
+
+    <section id="contact">
+      <div class="section-head"><span class="n">13</span><h2>Contact us</h2></div>
+      <p>Questions about this policy, or a request relating to your data (access, correction, deletion, or photo removal)? Reach out:</p>
+      <div class="contact-block">
+        <dl>
+          <dt>Email</dt><dd><span class="placeholder">[add your support email here]</span></dd>
+          <dt>App</dt><dd>GoFar — Explore Sudurpashchim Province</dd>
+          <dt>Package</dt><dd class="mono">com.gofar.app</dd>
+        </dl>
+      </div>
+      <p style="margin-top:16px;">This policy is a good-faith, plain-language summary of GoFar's real data practices as implemented in the app. It is not a substitute for advice from a lawyer — before relying on it as your published policy, have it reviewed by counsel familiar with the laws that apply to your users.</p>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  GoFar — Explore Sudurpashchim Province · Privacy Policy · Effective August 30, 2026
+</footer>
